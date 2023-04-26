@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 const Header = () => {
   return (
     <Container>
-      <div className="text-center">
+      <div className="text-center mt-4">
         <img src={logo} alt="" />
         <p className="text-secondary">
           <small>Journalism Without Fear or Favor</small>
@@ -15,7 +15,7 @@ const Header = () => {
       </div>
       <div className="d-flex">
         <Button variant="danger">Latest</Button>
-        <Marquee className="text-danger">
+        <Marquee className="text-danger" speed={100}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum odio
           eaque reiciendis molestias quis necessitatibus, aperiam voluptas ad
           sapiente quibusdam!........
