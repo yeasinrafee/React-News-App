@@ -5,7 +5,7 @@ import EditorsInsights from "../EditorsInsights/EditorsInsights";
 
 const News = () => {
   const news = useLoaderData();
-  const { _id, title, details, image_url, category_id } = news;
+  const { title, details, image_url, category_id } = news;
   return (
     <div>
       <Card>
