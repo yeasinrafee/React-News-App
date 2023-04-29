@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,7 +13,14 @@ const Register = () => {
     const password = form.password.value;
     const check = form.check.value;
     console.log(name, email, password, check);
+    createUser(email, password)
+      .then((result) => {
+        const registeredUser = result.user;
+        console.log(registeredUser);
+      })
+      .catch((error) => console.log(error));
   };
+
   return (
     <Container className="w-25">
       <h2 className="text-center mt-4">Please Register....!!</h2>

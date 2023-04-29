@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -9,6 +12,13 @@ const Login = () => {
     const password = form.password.value;
     const check = form.check.value;
     console.log(email, password, check);
+
+    loginUser(email, password)
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <Container className="w-25">
