@@ -21,7 +21,7 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <Container className="w-25">
+    <Container className="w-100 lg:w-25">
       <h2 className="text-center mt-4">Please Login....!!</h2>
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

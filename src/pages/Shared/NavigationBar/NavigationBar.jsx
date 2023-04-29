@@ -17,7 +17,7 @@ const NavigationBar = () => {
               <Nav.Link href="#pricing">About</Nav.Link>
               <Nav.Link href="#pricing">Career</Nav.Link>
             </Nav>
-            <Nav>
+            <Nav className="d-flex align-items-center gap-3">
               {user && <FaUserCircle style={{ fontSize: "20px" }} />}
 
               {user ? (
