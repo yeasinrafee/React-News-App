@@ -44,7 +44,11 @@ const NewsCard = ({ news }) => {
       <Card.Footer className="text-muted d-flex ">
         <div className=" d-flex flex-grow-1 align-items-center gap-2">
           <span>
-            <Rating style={{ maxWidth: 90 }} value={rating} readOnly />
+            <Rating
+              style={{ maxWidth: 90 }}
+              value={Math.floor(rating?.number || 0)}
+              readOnly
+            />
           </span>
           <span className="">{rating?.number}</span>
         </div>
